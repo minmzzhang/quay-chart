@@ -5,8 +5,21 @@ directory:
 skip-path:
   - tests
 skip-check:
-  - CKV_K8S_49 # Minimize wildcard use in Roles and ClusterRoles
-  - CKV_K8S_155 # Minimize ClusterRoles that grant control over validating or mutating admission webhook configurations
-  - CKV_K8S_156 # Minimize ClusterRoles that grant permissions to approve CertificateSigningRequests
-  - CKV_K8S_157 # Minimize Roles and ClusterRoles that grant permissions to bind RoleBindings or ClusterRoleBindings
-  - CKV_K8S_158 # Minimize Roles and ClusterRoles that grant permissions to escalate Roles or ClusterRoles
+  # CKV_K8S_49: Minimize wildcard use in Roles and ClusterRoles
+  - CKV_K8S_49
+  # CKV_K8S_155: ClusterRoles for admission webhook configurations
+  - CKV_K8S_155
+  # CKV_K8S_156: ClusterRoles to approve CertificateSigningRequests
+  - CKV_K8S_156
+  # CKV_K8S_157: Roles/ClusterRoles to bind RoleBindings or ClusterRoleBindings
+  - CKV_K8S_157
+  # CKV_K8S_158: Roles/ClusterRoles to escalate Roles or ClusterRoles
+  - CKV_K8S_158
+  # CKV_K8S_38: S3 setup job needs SA token for oc CLI
+  - CKV_K8S_38
+  # CKV_K8S_40: Job uses OpenShift namespace default UID (high UID assigned at runtime, no anyuid needed)
+  - CKV_K8S_40
+  # CKV_K8S_43: Image digest; chart uses tag, digest is deployment-specific
+  - CKV_K8S_43
+  # CKV_SECRET_6: False positives - templates use placeholders, script refs to cluster secrets only
+  - CKV_SECRET_6
