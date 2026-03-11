@@ -1,6 +1,10 @@
 apiVersion: v2
-description: A Helm chart to serve as the Validated Patterns Template
-keywords:
-  - pattern
-name: vp-template
-version: 0.0.1
+name: quay-registry
+description: Red Hat Quay Registry Resources
+type: application
+version: 0.1.0
+appVersion: "3.9"
+home: https://github.com/validatedpatterns/quay-chart
+maintainers:
+  - name: Zero Trust Validated Patterns Team
+    email: ztvp-arch-group@redhat.com
